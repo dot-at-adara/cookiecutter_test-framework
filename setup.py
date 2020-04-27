@@ -14,7 +14,8 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     include_package_data=True,
     url='https://github.com/dot-at-adara/{{cookiecutter.repo_name}}',
-    packages=setuptools.find_packages(include=['{{cookiecutter.repo_name}}', 'cookiecutter_test_framework/framework/core/{{cookiecutter.repo_name}}.*']),
+    packages=setuptools.find_packages(include=['{{cookiecutter.repo_name}}', '*/{{cookiecutter.repo_name}}.*',
+                                               'framework.core']),
 
     classifiers=[
         "Programming Language :: Python :: 3",
