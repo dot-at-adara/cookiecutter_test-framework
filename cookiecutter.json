@@ -3,7 +3,7 @@
   "email": "dot@adara.com",
   "github_username": "dot-at-adara",
   "project_name": "core",
-  "project_slug": "cookiecutter_test_framework/framework/core/{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
+  "project_slug": "framework/core/{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
   "project_short_description": "core cookiecutter sub package",
   "repo_name": "core",
   "pypi_username": "",
