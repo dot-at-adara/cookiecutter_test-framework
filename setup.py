@@ -1,7 +1,11 @@
-import setuptools
+import setuptools, os, sys
 
-# with open("README.md", "r") as fh:
-#     long_description = fh.read()
+version = "1.0"
+
+if sys.argv[-1] == 'tag':
+    os.system("git tag -a %s -m 'version %s'" % (version, version))
+    os.system("git push --tags")
+    sys.exit()
 with open('requirements.txt') as f:
     requirements = f.readlines()
 setuptools.setup(
@@ -14,8 +18,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     include_package_data=True,
     url='https://github.com/dot-at-adara/{{cookiecutter.repo_name}}',
-    packages=['cookiecutter_test_framework.{{cookiecutter.project_folder}}.{{cookiecutter.project_dir}}',
-              '{{cookiecutter.test_folder}}'],
+    packages=setuptools.find_namespace_packages(include=['{{cookiecutter.project_dir}}.*']),
 
     classifiers=[
         "Programming Language :: Python :: 3",
